@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-shadow-banner {
+    text-shadow: 1px 1px 1px #333;
+  }
+}
+
+@layer components {
+  .hoverEffect {
+    @apply duration-300 cursor-pointer;
+  }
+  .headerSedenavLi {
+    @apply hover:underline underline-offset-2 cursor-pointer text-gray-300 hover:text-white;
+  }
+}
+
+:root {
+  --color-primary: #008080; /* teal[500] */
+  --color-secondary: #ff5722; /* deepOrange[500] */
+}
+
+html {
+  font-size: 13px;
+}
+
+.dark {
+  --color-primary: #00bcd4; /* cyan[500] */
+  --color-secondary: #ff9800; /* orange[500] */
+}

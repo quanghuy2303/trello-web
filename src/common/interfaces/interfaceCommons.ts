@@ -1,0 +1,1 @@
+export type IMode = 'light' | 'dark' | 'system'
