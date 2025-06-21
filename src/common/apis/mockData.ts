@@ -1,6 +1,6 @@
-import type { IBoard } from "~/pages/boards/interfaceBoards"
+import type { IBoard, ICard } from '~/pages/boards/interfaceBoards'
 
-export const mockData : { board: IBoard } = {
+export const mockData: { board: IBoard } = {
   board: {
     _id: 'board-id-01',
     title: 'TrungQuanDev MERN Stack Board',
@@ -55,6 +55,15 @@ export const mockData : { board: IBoard } = {
           { _id: 'card-id-11', boardId: 'board-id-01', columnId: 'column-id-03', title: 'Title of card 11', description: null, cover: null, memberIds: [], comments: [], attachments: [] },
           { _id: 'card-id-12', boardId: 'board-id-01', columnId: 'column-id-03', title: 'Title of card 12', description: null, cover: null, memberIds: [], comments: [], attachments: [] },
           { _id: 'card-id-13', boardId: 'board-id-01', columnId: 'column-id-03', title: 'Title of card 13', description: null, cover: null, memberIds: [], comments: [], attachments: [] }
+        ]
+      },
+      {
+        _id: 'column-id-04',
+        boardId: 'board-id-01',
+        title: 'Done Column 04',
+        cardOrderIds: ['column-id-04-placehoder-card'],
+        cards: [
+          { _id: 'column-id-04-placehoder-card', boardId: 'board-id-01', columnId: 'column-id-04', FE_PlacehoderCard: true } as ICard
         ]
       }
     ]

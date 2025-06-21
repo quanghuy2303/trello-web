@@ -26,6 +26,8 @@ export default tseslint.config(
 
       //custom
       'no-console': 1,
+      'no-extra-boolean-cast': 0,
+      'prefer-const': 'off',
       'no-lonely-if': 1,
       'no-unused-vars': 1,
       'no-trailing-spaces': 1,
@@ -35,7 +37,7 @@ export default tseslint.config(
       'object-curly-spacing': [1, 'always'],
       indent: ['warn', 2],
       semi: [1, 'never'],
-      // quotes: ['error', 'single'],
+      quotes: ['error', 'single'], //phải dùng nháy đơn trong chuỗi
       'array-bracket-spacing': 1,
       'linebreak-style': 0,
       'no-unexpected-multiline': 'warn',

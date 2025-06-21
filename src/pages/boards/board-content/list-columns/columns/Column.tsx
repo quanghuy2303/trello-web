@@ -43,10 +43,10 @@ function Column({ column }: IColumnProps) {
 
 
   const dndColumsStyle = {
-    // touchAction: "none",
+    // touchAction: 'none',
     transform: CSS.Translate.toString(transform),
     transition,
-    height: "100%",
+    height: '100%',
     opacity: isDragging ? 0.5 : undefined
   }
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
@@ -59,19 +59,19 @@ function Column({ column }: IColumnProps) {
       <Box
         {...listeners}
         sx={{
-          minWidth: "300px",
-          maxWidth: "700px",
-          bgcolor: theme.palette.mode === "dark" ? "#333643" : "#ebecf0",
-          maxHeight: `calc(${theme.trello.boardContentHeight} - 100px"`
+          minWidth: '300px',
+          maxWidth: '700px',
+          bgcolor: theme.palette.mode === 'dark' ? '#333643' : '#ebecf0',
+          maxHeight: `calc(${theme.trello.boardContentHeight} - 100px'`
         }}
-        className="ml-2 rounded-[6px] h-fit overflow-x-hidden overflow-y-auto"
+        className='ml-2 rounded-[6px] h-fit overflow-x-hidden overflow-y-auto'
       >
         {/* box column */}
         <Box
           sx={{
             height: COLUMN_HEADER_HEIGHT
           }}
-          className="flex items-center justify-between px-2"
+          className='flex items-center justify-between px-2'
         >
           <Typography
             className='!font-bold cursor-pointer'
@@ -80,12 +80,12 @@ function Column({ column }: IColumnProps) {
             {column?.title}
           </Typography>
           <Box>
-            <Tooltip title="Mode option">
+            <Tooltip title='Mode option'>
               <span
-                id="basic-column-dropdown"
+                id='basic-column-dropdown'
                 onClick={handleClick}
                 aria-controls={open ? 'basic-menu' : undefined}
-                aria-haspopup="true"
+                aria-haspopup='true'
                 aria-expanded={open ? 'true' : undefined}
                 className='cursor-pointer'
               >
@@ -93,7 +93,7 @@ function Column({ column }: IColumnProps) {
               </span>
             </Tooltip>
             <Menu
-              id="basic-menu-column-dropdown"
+              id='basic-menu-column-dropdown'
               anchorEl={anchorEl}
               open={open}
               onClose={handleClose}
@@ -103,17 +103,17 @@ function Column({ column }: IColumnProps) {
             >
               <MenuItem>
                 <ListItemIcon>
-                  <ContentCut fontSize="small" />
+                  <ContentCut fontSize='small' />
                 </ListItemIcon>
                 <ListItemText>Cut</ListItemText>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant='body2' color='text.secondary'>
                   ⌘X
                 </Typography>
               </MenuItem>
               <Divider />
               <MenuItem>
                 <ListItemIcon>
-                  <Cloud fontSize="small" />
+                  <Cloud fontSize='small' />
                 </ListItemIcon>
                 <ListItemText>Web Clipboard</ListItemText>
               </MenuItem>
@@ -122,17 +122,17 @@ function Column({ column }: IColumnProps) {
         </Box>
 
         {/*box card */}
-        <ListCards cards={mapOrder(column.cards, column.cardOrderIds, "_id")} />
+        <ListCards cards={mapOrder(column.cards, column.cardOrderIds, '_id')} />
 
         {/*box footer */}
         <Box
           sx={{
             height: COLUMN_FOOTER_HEIGHT
           }}
-          className="flex items-center justify-between px-2"
+          className='flex items-center justify-between px-2'
         >
           <Button startIcon={<AddCard />}>Add new card</Button>
-          <Tooltip title="drag to more">
+          <Tooltip title='drag to more'>
             <DragHandleIcon className='cursor-pointer' />
           </Tooltip>
         </Box>

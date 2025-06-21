@@ -21,10 +21,10 @@ function ListCards({ cards }: ICardsProps) {
                 ${COLUMN_HEADER_HEIGHT} -
                 ${COLUMN_FOOTER_HEIGHT}
               )`,
-          "&::-webkit-scrollbar-thumb": { backgroundColor: "#ced0da" },
-          "&::-webkit-scrollbar-thumb:hover": { backgroundColor: "#bfc2cf" }
+          '&::-webkit-scrollbar-thumb': { backgroundColor: '#ced0da' },
+          '&::-webkit-scrollbar-thumb:hover': { backgroundColor: '#bfc2cf' }
         }}
-        className="flex flex-col gap-1 px-[5px] mx-[5px] overflow-x-hidden overflow-y-auto"
+        className='flex flex-col gap-1 px-[5px] mx-[5px] overflow-x-hidden overflow-y-auto'
       >
         {cards?.map((card: ICard) => <CardItem key={card?._id} card={card} />)}
       </Box>

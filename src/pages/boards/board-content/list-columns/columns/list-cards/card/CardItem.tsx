@@ -32,10 +32,11 @@ function CardItem({ card }: ICardItemProps) {
 
 
   const dndCardStyle = {
-    // touchAction: "none",
+    // touchAction: 'none',
     transform: CSS.Translate.toString(transform),
     transition,
-    opacity: isDragging ? 0.5 : undefined
+    opacity: isDragging ? 0.5 : undefined,
+    border: isDragging ? '1px solid #2ecc71' : undefined
   }
 
   const shouldShowCardAction = () => {
@@ -46,8 +47,9 @@ function CardItem({ card }: ICardItemProps) {
     <Card
       ref={setNodeRef} style={dndCardStyle} {...attributes} {...listeners}
       sx={{
-        boxShadow: "0 1px 1px rgba(0,0,0,0.2)",
-        overflow: "unset"
+        boxShadow: '0 1px 1px rgba(0,0,0,0.2)',
+        overflow: 'unset',
+        display: card?.FE_PlacehoderCard ? 'none' : 'block'
       }}
       className='cursor-pointer'
     >
@@ -55,17 +57,17 @@ function CardItem({ card }: ICardItemProps) {
         <CardMedia
           sx={{ height: 140 }}
           image={card.cover}
-          title="green iguana"
+          title='green iguana'
         />}
-      <CardContent className='p-1.5 ' sx={{ "&:last-child": { p: 1.5 } }}>
+      <CardContent className='p-1.5 ' sx={{ '&:last-child': { p: 1.5 } }}>
         <Typography >{card?.title}</Typography>
       </CardContent>
       {
         shouldShowCardAction() &&
         <CardActions className='!px-[4px] !pb-[8px]'>
-          {!!card?.memberIds?.length && <Button size="small" startIcon={<GroupIcon />}>{card?.memberIds?.length}</Button>}
-          {!!card?.comments?.length && <Button size="small" startIcon={<CommentIcon />}>{card?.comments?.length}</Button>}
-          {!!card?.attachments?.length && <Button size="small" startIcon={<AttachmentIcon />}>{card?.attachments?.length}</Button>}
+          {!!card?.memberIds?.length && <Button size='small' startIcon={<GroupIcon />}>{card?.memberIds?.length}</Button>}
+          {!!card?.comments?.length && <Button size='small' startIcon={<CommentIcon />}>{card?.comments?.length}</Button>}
+          {!!card?.attachments?.length && <Button size='small' startIcon={<AttachmentIcon />}>{card?.attachments?.length}</Button>}
         </CardActions>
       }
     </Card>

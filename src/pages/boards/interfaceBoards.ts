@@ -12,6 +12,7 @@ export interface ICard {
   description?: string | null
   cover?: string | null
   memberIds: string[]
+  FE_PlacehoderCard?: boolean
   comments: string[] // Hoặc có thể là object nếu sau này muốn đầy đủ thông tin
   attachments: (string | IAttachment)[]
 }
