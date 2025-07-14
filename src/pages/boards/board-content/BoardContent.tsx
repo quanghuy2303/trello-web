@@ -97,7 +97,7 @@ function BoardContent(props: IBoardContentProps) {
         //xóa card ra khỏi column
         nextActiveColumn.cards = nextActiveColumn?.cards?.filter(c => c._id !== activeDraggingCardId)
 
-        if (!isEmpty(nextActiveColumn.cards)) {
+        if (isEmpty(nextActiveColumn.cards)) {
           nextActiveColumn.cards = [generatePlacehoderCard(nextActiveColumn)]
         }
 
@@ -118,6 +118,8 @@ function BoardContent(props: IBoardContentProps) {
         nextOverColumn.cards = nextOverColumn.cards.filter(c => !c.FE_PlacehoderCard)
         nextOverColumn.cardOrderIds = nextOverColumn?.cards?.map(c => c._id)
       }
+
+      console.log(nextColumns)
 
       return nextColumns
     })

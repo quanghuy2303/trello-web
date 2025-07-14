@@ -49,7 +49,10 @@ function CardItem({ card }: ICardItemProps) {
       sx={{
         boxShadow: '0 1px 1px rgba(0,0,0,0.2)',
         overflow: 'unset',
-        display: card?.FE_PlacehoderCard ? 'none' : 'block'
+        // display: card?.FE_PlacehoderCard ? 'none' : 'block'
+        // overflow: card?.FE_PlacehoderCard ? 'hidden' : 'unset',
+        // height: card?.FE_PlacehoderCard ? '0px' : 'unset',
+        opacity: card?.FE_PlacehoderCard ? '0' : '1'
       }}
       className='cursor-pointer'
     >
